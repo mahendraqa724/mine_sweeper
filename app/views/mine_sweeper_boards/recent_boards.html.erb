@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="column-right">
+  <%= button_to("New mine sweeper board", new_mine_sweeper_board_path, method: :get, class: "btn btn-primary new-sweeper") %>
+</div>
+<br>
+<br>
+<div class="">
+  <h1 style="text-align:center;mt-5">Recent Mine Sweeper Boards</h1>
+</div>
+
+<table class="table table-bordered ms-2">
+  <tr>
+    <th style="text-align:center;color:white;background-color:#52ab98">Board Name</th>
+    <th style="text-align:center;color:white;background-color:#52ab98">Creater Email</th>
+    <th style="text-align:center;color:white;background-color:#52ab98">Board Width</th>
+    <th style="text-align:center;color:white;background-color:#52ab98">Board height</th>
+    <th style="text-align:center;color:white;background-color:#52ab98">Total mines</th>
+    <th style="text-align:center;color:white;background-color:#52ab98">Created at</th>
+  </tr>
+  <% @mine_sweeper_boards.each do |mine_sweeper_board| %>
+    <tr>
+      <td><%= link_to mine_sweeper_board.name, mine_sweeper_board_path(mine_sweeper_board) %></td>
+      <td><%= mine_sweeper_board.email %></td>
+      <td><%= mine_sweeper_board.board_width %></td>
+      <td><%= mine_sweeper_board.board_height %></td>
+      <td><%= mine_sweeper_board.total_mines %></td>
+      <td><%= mine_sweeper_board.created_at.strftime("%d %B %Y") %></td>
+    </tr>
+  <% end %>
+</table>
+<div class="container" style="margin-top: 30px;">
+  <h3 style="text-align:center"><%= link_to "view all generated boards", mine_sweeper_boards_path, class: "btn btn-success" %></h3>
+</div>
+

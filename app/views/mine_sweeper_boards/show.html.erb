@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container mt-4">
+<div class="column-right">
+  <%= button_to("Edit Board", edit_mine_sweeper_board_path(@mine_sweeper_board), method: :get, class: "btn btn-primary new-sweeper") %>
+</div>
+<div class="column-right">
+  <%= button_to("Recent Boards", recent_boards_path, method: :get, class: "btn btn-primary new-sweeper") %>
+</div>
+<div class="column-right">
+  <%= button_to("Delete Board", @mine_sweeper_board, method: :delete, class: "btn btn-danger new-sweeper") %>
+</div>
+</div>
+<br>
+<div style="">
+<div>
+  <h1 style="text-align:center;mt-5">Board Details</h1>
+</div>
+</div>
+
+ <div  style="display:flex; flex-direction:column; align-items:center">
+  <div class='col-md-6 d-flex justify-content-center'>
+    <%= render @mine_sweeper_board %>
+  </div>
+  <div class="mt-2">
+    <table class="table table-bordered table-success table-striped">
+      <% count = 0 %>
+      <% @mine_sweeper_board.board_height.times do |i| %>
+        <tr>
+          <% @mine_sweeper_board.board_width.times do |j| %>
+            <td> <%= @filled_columns.include?(count) ? image_tag("bomb-svgrepo-com.svg"): '' %> </td>
+            <% count+=1 %>
+          <%end%>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+  <h1>Editing mine sweeper board</h1>
+
+  <%= render "form", mine_sweeper_board: @mine_sweeper_board %>
+
+  <br>
+</div>
+<div class="col-md-4">
+  <div class="column-right">
+    <%= button_to("Show this mine sweeper board", @mine_sweeper_board, method: :get, class: "btn btn-primary")%>
+  </div>
+  <div class="column-right">
+    <%= button_to("Back to mine sweeper boards", mine_sweeper_boards_path, method: :get, class: "btn btn-primary")%>
+  </div>
+</div>

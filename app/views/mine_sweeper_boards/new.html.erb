@@ -1,0 +1,13 @@
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+  <h1>New Mine Sweeper Board</h1>
+
+  <%= render "form", mine_sweeper_board: @mine_sweeper_board %>
+
+  <br>
+</div>
+
+<div class="col-md-4">
+  <%= button_to("Recent sweeper boards", recent_boards_path, method: :get, class: "btn btn-primary") %>
+</div>
