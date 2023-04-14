@@ -22,5 +22,5 @@ rails db:create
 rails db:seed
 ```
 ## Additional precaution
-keep board width less than 32 to see whole or make sure more than 30% of cells are filled (for large width size)
+keep board width less than 32 to see whole or make sure more than 30% of cells are filled (for large width size).
 To keep site responsive I have kept validation of width less than 100.
