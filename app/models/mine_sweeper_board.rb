@@ -4,7 +4,7 @@ class MineSweeperBoard < ApplicationRecord
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :total_mines, numericality: { greater_than_or_equal_to: 0 }
   validate :max_mines
-  validates :board_width, numericality: { greater_than_or_equal_to: 0 }
+  validates :board_width, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
   validates :board_height, numericality: { greater_than_or_equal_to: 0 }
   
   def max_mines
